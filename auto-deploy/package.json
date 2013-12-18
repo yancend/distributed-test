@@ -1,0 +1,34 @@
+{
+  "name": "auto-deploy",
+  "version": "0.0.1",
+  "description": "自动远程部署工具",
+  "main": "lib/file-watcher.js",
+  "bin": {
+    "auto-deploy": "bin/deploy.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tianlili/auto-deploy"
+  },
+  "keywords": [
+    "自动上传,远程部署"
+  ],
+  "author": {
+    "name": "tianlili"
+  },
+  "license": "BSD",
+  "dependencies": {
+    "node.extend": "~1.0.7",
+    "handlebars": "~1.0.11",
+    "js-yaml": "~2.0.5",
+    "log4js": "~0.6.7",
+    "watch": "~0.7.0",
+    "underscore": "~1.5.1",
+    "underscore.string": "~2.3.3"
+  },
+  "readme": "",
+  "readmeFilename": "README.md"
+}

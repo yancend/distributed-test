@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="1" failures="0" hostname="cq01-testing-fis00.vm.baidu.com" name="6AC86E6DA84A0A3.T1.T1" tests="1" time="0.0" timestamp="2013-12-18T07:32:36">
+  <properties>
+    <property name="target" value="1.6" />
+    <property name="ant.project.invoked-targets" value="tests" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="debuglevel" value="source,lines,vars" />
+    <property name="sun.boot.library.path" value="/home/work/soft/jdk1.6.0_34/jre/lib/amd64" />
+    <property name="java.vm.version" value="20.9-b04" />
+    <property name="ant.library.dir" value="/home/work/soft/apache-ant/lib" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.8.4 compiled on May 22 2012" />
+    <property name="ant.java.version" value="1.6" />
+    <property name="java.vm.vendor" value="Sun Microsystems Inc." />
+    <property name="java.vendor.url" value="http://java.sun.com/" />
+    <property name="path.separator" value=":" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="user.country" value="CN" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="sun.os.patch.level" value="unknown" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="user.dir" value="/home/work/repos/distributed-test" />
+    <property name="java.runtime.version" value="1.6.0_34-b04" />
+    <property name="testname" value="6AC86E6DA84A0A3.T1.T1" />
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment" />
+    <property name="basedir" value="/home/work/repos/distributed-test" />
+    <property name="java.endorsed.dirs" value="/home/work/soft/jdk1.6.0_34/jre/lib/endorsed" />
+    <property name="os.arch" value="amd64" />
+    <property name="ant.project.default-target" value="tests" />
+    <property name="ant.file.type.ant_junit" value="file" />
+    <property name="java.io.tmpdir" value="/tmp" />
+    <property name="ant.core.lib" value="/home/work/soft/apache-ant/lib/ant.jar" />
+    <property name="line.separator" value="&#xa;" />
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="os.name" value="Linux" />
+    <property name="ant.home" value="/home/work/soft/apache-ant" />
+    <property name="ant.project.name" value="ant_junit" />
+    <property name="sun.jnu.encoding" value="UTF-8" />
+    <property name="source" value="1.6" />
+    <property name="java.library.path" value="/home/work/soft/jdk1.6.0_34/jre/lib/amd64/server:/home/work/soft/jdk1.6.0_34/jre/lib/amd64:/home/work/soft/jdk1.6.0_34/jre/../lib/amd64:/home/work/soft/staf/lib:/home/work/soft/staf/lib/java12:/home/work/soft/svn/lib::::/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib" />
+    <property name="java.class.version" value="50.0" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="os.version" value="2.6.32_1-7-0-0" />
+    <property name="ant.file" value="/home/work/repos/distributed-test/build.xml" />
+    <property name="user.home" value="/home/work" />
+    <property name="junit.output.dir" value="junit" />
+    <property name="user.timezone" value="" />
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob" />
+    <property name="java.specification.version" value="1.6" />
+    <property name="file.encoding" value="UTF-8" />
+    <property name="java.class.path" value="/home/work/repos/distributed-test/bin:/home/work/repos/distributed-test/bin/selenium-java-2.37.0.jar:/home/work/repos/distributed-test/bin/junit-4.11.jar:/home/work/repos/distributed-test/bin/selenium-server-standalone-2.37.0.jar:/home/work/repos/distributed-test:/home/work/soft/jdk1.6.0_34/lib/dt.jar:/home/work/soft/jdk1.6.0_34/lib/tools.jar:/home/work/soft/staf/lib/JSTAF.jar:/home/work/soft/apache-ant/lib/ant-launcher.jar:/home/work/soft/apache-ant/lib/ant.jar:/home/work/soft/apache-ant/lib/ant-junit.jar:/home/work/soft/apache-ant/lib/ant-junit4.jar" />
+    <property name="user.name" value="work" />
+    <property name="ant.file.ant_junit" value="/home/work/repos/distributed-test/build.xml" />
+    <property name="java.vm.specification.version" value="1.0" />
+    <property name="java.home" value="/home/work/soft/jdk1.6.0_34/jre" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner 6AC86E6DA84A0A3.T1.T1 filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/work/repos/distributed-test/junit/TEST-6AC86E6DA84A0A3.T1.T1.xml crashfile=/home/work/repos/distributed-test/junitvmwatcher1241098803069189034.properties propsfile=/home/work/repos/distributed-test/junit1349285389139169131.properties" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="user.language" value="zh" />
+    <property name="java.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="java.version" value="1.6.0_34" />
+    <property name="java.ext.dirs" value="/home/work/soft/jdk1.6.0_34/jre/lib/ext:/usr/java/packages/lib/ext" />
+    <property name="sun.boot.class.path" value="/home/work/soft/jdk1.6.0_34/jre/lib/resources.jar:/home/work/soft/jdk1.6.0_34/jre/lib/rt.jar:/home/work/soft/jdk1.6.0_34/jre/lib/sunrsasign.jar:/home/work/soft/jdk1.6.0_34/jre/lib/jsse.jar:/home/work/soft/jdk1.6.0_34/jre/lib/jce.jar:/home/work/soft/jdk1.6.0_34/jre/lib/charsets.jar:/home/work/soft/jdk1.6.0_34/jre/lib/modules/jdk.boot.jar:/home/work/soft/jdk1.6.0_34/jre/classes" />
+    <property name="java.vendor" value="Sun Microsystems Inc." />
+    <property name="file.separator" value="/" />
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="ant.file.type" value="file" />
+    <property name="sun.cpu.isalist" value="" />
+  </properties>
+  <error message="6AC86E6DA84A0A3.T1.T1" type="java.lang.ClassNotFoundException">java.lang.ClassNotFoundException: 6AC86E6DA84A0A3.T1.T1
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:169)
+</error>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

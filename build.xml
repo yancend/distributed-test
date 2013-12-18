@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <project basedir="." default="tests" name="ant_junit">
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="classpath">
+		<pathelement location="bin"/>
+        <pathelement location="bin/selenium-java-2.37.0.jar"/>
+        <pathelement location="bin/junit-4.11.jar"/>
+        <pathelement location="bin/selenium-server-standalone-2.37.0.jar"/>
+    </path>
+    <target name="init">
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target depends="init" name="build">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+		<javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+			<src path="${srcpath}"/>
+            <classpath refid="classpath"/>
+        </javac>
+    </target>
+    <target name="tests" depends="build">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+			<test name="${testname}" todir="${junit.output.dir}"/>  
+            <classpath refid="classpath"/>
+        </junit>
+    </target>
+   
+    <target name="jreport" depends="tests">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+</project>

@@ -1,0 +1,19 @@
+
+localPath: /home/work/repos/distributed-test/src
+# 远程服务器用什么路径分隔
+
+onFileAdded: "{{{pluginsPath}}}/on-file-added-for-deploy.js"
+#onFileChanged: "{{{pluginsPath}}}/on-file-added-for-deploy.js"
+#onFileRemoved: "{{{pluginsPath}}}/on-file-removed-for-deploy.js"
+
+excludes:
+  - ".svn"
+  - ".csv"
+  - ".idea"
+  - ".DS_Store"
+  - ".git"
+  - ".hg"
+  - ".class$"
+  - ".jar$"
+  - ".swp$"
+  - ".log$"
