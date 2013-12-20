@@ -60,13 +60,13 @@ module.exports = function (config) {
         isSyncing = false;
         var item = changedFiles.shift();
         if (item.event === "added") {
-           if (config.hasOwnProperty("onFileAdded")) {
-               require(handlebars.compile(config.onFileAdded)({
-                   pluginsPath: pluginPath
-               }))(config, item.filePath, item.stats, syncStatusEmitter);
-           }
-       }
-         if (item.event === "changed") {
+            if (config.hasOwnProperty("onFileAdded")) {
+                require(handlebars.compile(config.onFileAdded)({
+                    pluginsPath: pluginPath
+                }))(config, item.filePath, item.stats, syncStatusEmitter);
+            }
+        }
+        else if (item.event === "changed") {
             if (config.hasOwnProperty("onFileChanged")) {
                 require(handlebars.compile(config.onFileChanged)({
                     pluginsPath: pluginPath
@@ -95,7 +95,7 @@ module.exports = function (config) {
             logger.debug(filePath + " is ignored");
             return;
         }
-		pushChangedFiles({
+        pushChangedFiles({
             event: 'added',
             filePath: filePath,
             stats: stats
@@ -146,13 +146,20 @@ module.exports = function (config) {
             changedFiles.push(item);
             return;
         }
-        var lastItem = changedFiles[changedFiles.length - 1];
-        if (lastItem.filePath === item.filePath &&
-            lastItem.event == item.event) {
+        for(var i in changedFiles){
+            if(changedFiles[i].filePath === item.filePath &&
+                changedFiles[i].event == item.event){
+                return;
+            }
         }
-        else {
-            changedFiles.push(item);
-        }
+        changedFiles.push(item);
+//        var lastItem = changedFiles[changedFiles.length - 1];
+//        if (lastItem.filePath === item.filePath &&
+//            lastItem.event == item.event) {
+//        }
+//        else {
+//            changedFiles.push(item);
+//        }
     }
 
     function isExcludeFile(filePath) {
