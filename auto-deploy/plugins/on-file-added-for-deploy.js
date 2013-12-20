@@ -37,14 +37,14 @@ module.exports = function(config, filePath, stat, syncStatusEmitter) {
 		else
 			hn_declaration += 'DesiredCapabilities capability_' + config[i] + ' = DesiredCapabilities.' + config[i] + '();' + '\n';
 		hn_declaration += 'driver_' + config[i] + ' = new RemoteWebDriver(new URL(nodeURL),capability_' + config[i] + ');' + '\n';
-		hn_declaration += 'driver_' + config[i] + '.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);' + '\n';
+		hn_declaration += 'driver_' + config[i] + '.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);' + '\n';
 	}
 
 	var s_drawing = '';
 	for(var i in config){
 		s_drawing += '//' + config[i] + '\n';
 		s_drawing += 'driver_' + config[i] + '.manage().window().maximize();'+ '\n';
-		s_drawing += 'Thread.sleep(1000);'+ '\n';
+		s_drawing += 'Thread.sleep(100);'+ '\n';
 		s_drawing += 'GetCurrentScreenshot(driver_' + config[i] + ', "pics/' + pkgName.replace(".", "/") + '/' + config[i] + '.png");'+ '\n';
 	}
 

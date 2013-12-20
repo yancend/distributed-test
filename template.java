@@ -97,6 +97,7 @@ public class {*classname*} {
 
 		BufferedImage subImage = screenshotImage.getSubimage( 0, currentY, viewportWidth, viewportHeight );
 
+		FileUtils.copyFile(new File("temp.png"), new File(picName));
 		ImageIO.write(subImage ,"png", new File(picName));
     }
 
