@@ -14,12 +14,10 @@ var yaml = require('js-yaml');
 
 var fileWatcher = require(path.join(__dirname, "..", "lib", "file-watcher.js"));
 
-if (process.argv.length !== 3) {
-    console.log("node deploy.js test.yaml");
-    process.exit(1);
-}
-
-var configFile = process.argv[2];
+if (process.argv.length == 3)
+    var configFile = process.argv[2];
+else
+    var configFile = "auto-deploy/config/auto-deploy.yaml";
 yaml.loadAll(fs.readFileSync(configFile, "utf-8"), function(config) {
     var defaultConfig = {
         logLevel: "DEBUG"

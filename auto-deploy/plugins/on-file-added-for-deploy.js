@@ -44,7 +44,7 @@ module.exports = function(config, filePath, stat, syncStatusEmitter) {
 	for(var i in config){
 		s_drawing += '//' + config[i] + '\n';
 		s_drawing += 'driver_' + config[i] + '.manage().window().maximize();'+ '\n';
-		s_drawing += 'Thread.sleep(100);'+ '\n';
+		s_drawing += 'Thread.sleep(1000);'+ '\n';
 		s_drawing += 'GetCurrentScreenshot(driver_' + config[i] + ', "pics/' + pkgName.replace(".", "/") + '/' + config[i] + '.png");'+ '\n';
 	}
 
