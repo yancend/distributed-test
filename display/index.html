@@ -70,7 +70,7 @@
                     <tr>
                         <td><button onclick="saveConfig()">保存配置</button></td>
                         <td><button id='runCases' onclick="runCases()" style="display: none;margin-top: 10px" >执行测试</button></td>
-                        <td><button id='quireLink' style="display: none" onClick ="window.open('./quireRel.php?defaultTestSuite='+tsName);" >点击查看测试结果</button></td>
+                        <td><button id='quireLink' onClick ="javascript:void(window.open('./quireRel.php?defaultTestSuite='+tsName,'_blank',''));" >点击查看测试结果</button></td>
                     </tr>
                 </table>
             </div>
