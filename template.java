@@ -67,8 +67,8 @@ public class {*classname*} {
     }
   }
 
-  public void GetCurrentScreenshot (WebDriver _driver, String picName) throws Exception
-   {  
+	public void GetCurrentScreenshot (WebDriver _driver, String picName) throws Exception
+	{  
 		// long currentY1 = (long)((JavascriptExecutor)_driver).executeScript("return  document.body.parentNode.scrollTop");
 		String currentY1 = ((JavascriptExecutor)_driver).executeScript("return  document.body.parentNode.scrollTop").toString();
 		int currentY = Integer.parseInt(currentY1);
@@ -95,11 +95,16 @@ public class {*classname*} {
 		InputStream in = new ByteArrayInputStream(screenshot);
 		BufferedImage screenshotImage = ImageIO.read(in);
 
-		BufferedImage subImage = screenshotImage.getSubimage( 0, currentY, viewportWidth, viewportHeight );
+		BufferedImage subImage;
+		if((currentY+600)<=totalHeight){
+			subImage = screenshotImage.getSubimage( 0, currentY, viewportWidth, 600 );
+		}else{
+			subImage = screenshotImage.getSubimage( 0, currentY, viewportWidth, viewportHeight );
+		}
 
 		FileUtils.copyFile(new File("temp.png"), new File(picName));
 		ImageIO.write(subImage ,"png", new File(picName));
-    }
+	}
 
   private boolean isElementPresent(By by) {
     try {
