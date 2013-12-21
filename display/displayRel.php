@@ -67,41 +67,8 @@ echo  "<script type='text/javascript'>var urlsStr = '".$_GET['urls']."';</script
         for(var p =0;p<imgs.length;p++){
             $(imgs[p]).css("width","100%");
         }
-        $("#displayTable").attr('style','width:100% ;display: block')
-
+        $("#displayTable").attr('style','width:100% ;display: block');
     });
-//    var singleResultDiv = $("<div class='singleRel' style='text-align: center'></div>");
-//
-//
-//    var imgsDiv = $("<div class='imgsDiv'></div>");
-//
-//    //把该case的图片放到对应div
-//    for(var i=0;i< urls.length;i++){
-//        imgsDiv.append($("<img src=\""+urls[i]+"\"/>"));
-//        imgsDiv.append($("<br/>"));
-//    }
-//    singleResultDiv.append(imgsDiv);
-//    //加到总的展示div
-//    document.body.appendChild(singleResultDiv[0]);
-
-
-    /*var  s = "";
-     s += "\r\n网页可见区域宽："+ document.body.clientWidth;
-     s += "\r\n网页可见区域高："+ document.body.clientHeight;
-     s += "\r\n网页可见区域宽："+ document.body.offsetWidth  +" (包括边线和滚动条的宽)";
-     s += "\r\n网页可见区域高："+ document.body.offsetHeight +" (包括边线的宽)";
-     s += "\r\n网页正文全文宽："+ document.body.scrollWidth;
-     s += "\r\n网页正文全文高："+ document.body.scrollHeight;
-     s += "\r\n网页被卷去的高："+ document.body.scrollTop;
-     s += "\r\n网页被卷去的左："+ document.body.scrollLeft;
-     s += "\r\n网页正文部分上："+ window.screenTop;
-     s += "\r\n网页正文部分左："+ window.screenLeft;
-     s += "\r\n屏幕分辨率的高："+ window.screen.height;
-     s += "\r\n屏幕分辨率的宽："+ window.screen.width;
-     s += "\r\n屏幕可用工作区高度："+ window.screen.availHeight;
-     s += "\r\n屏幕可用工作区宽度："+ window.screen.availWidth;
-     s += "\r\n你的屏幕设置是 "+ window.screen.colorDepth +" 位彩色";
-     s += "\r\n你的屏幕设置 "+ window.screen.deviceXDPI +" 像素/英寸";*/
 </script>
 
 </html>
