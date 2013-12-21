@@ -1,68 +1,104 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 
-    <title></title>
-    <script type="text/javascript" src="lib/jquery-1.5.1.js"></script>
-</head>
-<body>
-<div style="left:300px; position:relative;  width: 1000px">
-<form id="form" name="submitfForm" method="post" style="">
-<p>测试集名称:
-<input id="testSuite"
-        name="testSuiteName" type="text"/></p>
-    <!--Ip：        <input type="text" name="project_ip">        <br />-->
-    <p >请选择浏览器:
-    <label><input name="browsers[]" type="checkbox" value="chrome" />chrome </label>
-    <label><input name="browsers[]" type="checkbox" value="firefox" />firefox </label>
-    <label><input name="browsers[]" type="checkbox" value="ie6" />ie6 </label>
-    <label><input name="browsers[]" type="checkbox" value="ie7" />ie7 </label>
-    <label><input name="browsers[]" type="checkbox" value="ie8" />ie8 </label>
-    <label><input name="browsers[]" type="checkbox" value="ie9" />ie9 </label>
-    <label><input name="browsers[]" type="checkbox" value="ie10" />ie10 </label>
-    <label><input name="browsers[]" type="checkbox" value="opera" />opera </label>
-    <label><input name="browsers[]" type="checkbox" value="safari" />safari </label></p>
-</form>
-<button onclick="saveConfig()"  style="float:left;">  保存配置  </button>
-    <div id='saveResult'></div>    <br/>
-        <button id='runCases' onclick="runCases()" style="display: none;margin-top: 10px" >  执行测试  </button>
-
-<div id='testResult' style="display: none">
-    <button>  <a id='quireLink' href="./quireRel.php?defaultTestSuite=" target=\"_blank\">点击查看测试结果:</a></button>
-</div>
-
-
-</div>
-</body>
-<script type="text/javascript">
-    var savedSuccessMsg = "config has been saved !";
-    var tsName ;
-    function saveConfig(){
-        $.ajax( {
-            url:'saveConfig.php',
-            type:'post',
-            data:$("#form").serialize(),
-            success:function ( msg ) {
-                $("#saveResult").attr('style',"float:left;display: block;float:");
-                $("#saveResult").text(savedSuccessMsg);
-                $("#runCases").attr('style',"display: block;margin-top: 10px");
-                tsName = document.getElementById("testSuite").value;
-            },
-            error:function ( xhr, msg ) {
-                alert("error 1");
+        <title></title>
+        <script type="text/javascript" src="lib/jquery-1.5.1.js"></script>
+        <style>
+            body {
+                font-family: 'Courier New', 'Heiti SC', 'Microsoft Yahei';
             }
-        } );
-    }
-    function runCases(){
-        $("#saveResult").attr('style',"float:left;display: none;margin-top: 10px");
-        //打开一个新的空白页面
+            .title {
+                font-weight: bold;
+                font-size: 30px;
+                margin: 30px 0 80px 0;
+            }
+            .label {
+                font-weight: bold;
+                font-size: 15px;
+            }
+            #saveResult {
+                font-size: 12px;
+                color:red;
+                margin-bottom: 10px;
+            }
+            button {
+                border: 1px solid #666;
+                margin-right: 40px;
+                padding: 5px 15px;
+                -moz-border-radius: 8px;
+                -webkit-border-radius: 8px;
+                cursor: pointer;
+                font-size: 12px;
+                font-family: 'Courier New', 'Heiti SC', 'Microsoft Yahei';
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="left:450px; position:relative;  width: 450px">
+            <div class="title" align="center">
+                多浏览器测试分发平台
+            </div>
+            <form id="form" name="submitfForm" method="post" style="">
+                <p>
+                    <span class="label">测试集名称:</span>
+                    <input id="testSuite" name="testSuiteName" type="text" size=40/>
+                </p>
+                <!--Ip：        <input type="text" name="project_ip">        <br />-->
+                <p >
+                    <div style="float:left">
+                        <span class="label">请选择浏览器:</span>
+                    </div>
+                    <div style="margin-left:105px">
+                        <label><input name="browsers[]" type="checkbox" value="chrome" />chrome </label><br/>
+                        <label><input name="browsers[]" type="checkbox" value="firefox" />firefox </label><br/>
+                        <label><input name="browsers[]" type="checkbox" value="ie6" />ie6 </label><br/>
+                        <label><input name="browsers[]" type="checkbox" value="ie7" />ie7 </label><br/>
+                        <label><input name="browsers[]" type="checkbox" value="ie8" />ie8 </label><br/>
+                        <label><input name="browsers[]" type="checkbox" value="ie9" />ie9 </label><br/>
+                        <label><input name="browsers[]" type="checkbox" value="ie10" />ie10 </label><br/>
+                        <label><input name="browsers[]" type="checkbox" value="opera" />opera </label><br/>
+                        <label><input name="browsers[]" type="checkbox" value="safari" />safari </label><br/>
+                    </div>
+                </p>
+            </form>
+            <div id='saveResult' style='visibility:hidden;'>config has been saved !</div>
+            <div>
+                <table>
+                    <tr>
+                        <td><button onclick="saveConfig()">保存配置</button></td>
+                        <td><button id='runCases' onclick="runCases()" style="display: none;margin-top: 10px" >执行测试</button></td>
+                        <td><button id='quireLink' style="display: none" onClick ="window.open('./quireRel.php?defaultTestSuite='+tsName);" >点击查看测试结果</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var tsName ;
+        function saveConfig(){
+            $.ajax( {
+                url:'saveConfig.php',
+                type:'post',
+                data:$("#form").serialize(),
+                success:function ( msg ) {
+                    $("#saveResult").attr('style',"visibility: visible");
+                    $("#runCases").attr('style',"display: block;");
+                    tsName = document.getElementById("testSuite").value;
+                },
+                error:function ( xhr, msg ) {
+                    alert("error 1");
+                }
+            } );
+        }
+        function runCases(){
+            $("#saveResult").attr('style',"visibility: hidden");
+            //打开一个新的空白页面
+            window.open('./target.html',"_blank","");
+            $("#quireLink").attr('style',"display: block");
+        }
 
-        window.open('./target.html',"_blank","");
-        $("#quireLink").attr('href',"./quireRel.php?defaultTestSuite="+tsName);
-        $("#testResult").attr('style',"display: block");
-
-    }
-
-</script>
+    </script>
 </html>
