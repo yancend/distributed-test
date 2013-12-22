@@ -44,10 +44,11 @@ echo  "<script type='text/javascript'>var urlsStr = '".$_GET['urls']."';</script
 ?>
 
 <script type="text/javascript">
+    var vNum = 2;
     var urls = urlsStr.split(",");
     function addTr(startIndex){
         var tr = $("<tr></tr>").attr('width','100%');
-        for(var j= 0;j<3&&(startIndex+j<urls.length);j++){
+        for(var j= 0;j<vNum&&(startIndex+j<urls.length);j++){
             var img = $("<img class=\"imgClass\" src=\""+urls[startIndex+j]+"\"  />" );
             var imgName = urls[startIndex+j].split("/").slice(-1)[0];
 
@@ -57,10 +58,10 @@ echo  "<script type='text/javascript'>var urlsStr = '".$_GET['urls']."';</script
         }
         $("#displayTable").append(tr);
     }
-        var tdWidth = Math.floor(document.documentElement.scrollWidth/3);
-        var trNum = Math.ceil(urls.length/3);
+        var tdWidth = Math.floor(document.documentElement.scrollWidth/vNum);
+        var trNum = Math.ceil(urls.length/vNum);
         for(var i= 0;i<trNum;i++){
-            addTr(i*3);
+            addTr(i*vNum);
         }
     $(window).load(function(){
         var imgs = $("img");
